@@ -8,7 +8,6 @@ position = Vector2(17, 17)
 
 [node name="Player" parent="." unique_id=1525009050 instance=ExtResource("1_ebmjs")]
 position = Vector2(193, 282)
-scale = Vector2(4, 4)
 
 [node name="slime" parent="." unique_id=1857308219 instance=ExtResource("2_qxrlw")]
-position = Vector2(833, 422)
+position = Vector2(1169, 433.00003)

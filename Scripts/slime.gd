@@ -6,8 +6,8 @@ const SPEED = 300.0
 var target = null
 
 func _physics_process(delta: float) -> void:
-
-	move_and_slide()
+	if target:
+		_attack(delta)
 
 
 func _attack(delta: float) -> void:
