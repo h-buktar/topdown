@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://d0wvyd3ljrajw" path="res://Assets/Cute_Fantasy_Free/Player/Player.png" id="1_v0iea"]
 [ext_resource type="AudioStream" uid="uid://1f2oevk7uqk0" path="res://Assets/Music/530444__mellau__whoosh-short-4.wav" id="3_6t5aa"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ke3b4"]
+size = Vector2(38.5, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
 atlas = ExtResource("1_v0iea")
 region = Rect2(0, 192, 32, 32)
@@ -425,9 +428,15 @@ animations = [{
 size = Vector2(41, 44)
 
 [node name="Player" type="CharacterBody2D" unique_id=1525009050]
+scale = Vector2(4, 4)
 script = ExtResource("1_cvnsp")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=858800491]
+position = Vector2(-2, 30.25)
+shape = SubResource("RectangleShape2D_ke3b4")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=585578939]
+position = Vector2(-4.25, 1)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_upi4o")
 animation = &"attack_right"
@@ -446,3 +455,4 @@ position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_upi4o")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
