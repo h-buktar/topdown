@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c41o0jxk6r47e" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://d0wvyd3ljrajw" path="res://Assets/Cute_Fantasy_Free/Player/Player.png" id="1_v0iea"]
+[ext_resource type="AudioStream" uid="uid://1f2oevk7uqk0" path="res://Assets/Music/530444__mellau__whoosh-short-4.wav" id="3_6t5aa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
 atlas = ExtResource("1_v0iea")
@@ -226,7 +227,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fkybt")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"attack_down",
 "speed": 10.0
 }, {
@@ -243,7 +244,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f1ek2")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"attack_right",
 "speed": 10.0
 }, {
@@ -260,7 +261,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ukyrk")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"attack_up",
 "speed": 10.0
 }, {
@@ -420,10 +421,28 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upi4o"]
+size = Vector2(41, 44)
+
 [node name="Player" type="CharacterBody2D" unique_id=1525009050]
 script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=585578939]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_upi4o")
-animation = &"run_right"
+animation = &"attack_right"
+frame = 1
+
+[node name="SwingSword" type="AudioStreamPlayer2D" parent="." unique_id=1044206542]
+stream = ExtResource("3_6t5aa")
+pitch_scale = 3.0
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1331106091]
+position = Vector2(30, 5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=203659929]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_upi4o")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
