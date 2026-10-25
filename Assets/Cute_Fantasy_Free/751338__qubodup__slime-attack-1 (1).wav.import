@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://lss5n8gro7kq"
+path="res://.godot/imported/751338__qubodup__slime-attack-1 (1).wav-ab1ef61802f7aa86da9ae498638f579f.sample"
+
+[deps]
+
+source_file="res://Assets/Cute_Fantasy_Free/751338__qubodup__slime-attack-1 (1).wav"
+dest_files=["res://.godot/imported/751338__qubodup__slime-attack-1 (1).wav-ab1ef61802f7aa86da9ae498638f579f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
