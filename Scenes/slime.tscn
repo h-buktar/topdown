@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b86vpoltngieg" path="res://Assets/Cute_Fantasy_Free/Enemies/Slime_Green.png" id="1_jokqx"]
 [ext_resource type="Script" uid="uid://0tfk4q4a74uq" path="res://Scripts/slime.gd" id="1_swwnm"]
 [ext_resource type="AudioStream" uid="uid://lss5n8gro7kq" path="res://Assets/Cute_Fantasy_Free/751338__qubodup__slime-attack-1 (1).wav" id="3_aiwxb"]
+[ext_resource type="PackedScene" uid="uid://ber3imwdra86g" path="res://Scenes/health_bar.tscn" id="4_paq7w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jokqx"]
 atlas = ExtResource("1_jokqx")
@@ -188,10 +189,15 @@ shape = SubResource("RectangleShape2D_upi4o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=1112462700]
 position = Vector2(1, 1)
+scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_upi4o")
 
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=1939191665]
 stream = ExtResource("3_aiwxb")
+
+[node name="HealthBar" parent="." unique_id=1191603700 instance=ExtResource("4_paq7w")]
+position = Vector2(-25, -56.000004)
+scale = Vector2(3, 3)
 
 [connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]
 [connection signal="body_exited" from="Sight" to="." method="_on_sight_body_exited"]
