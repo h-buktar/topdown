@@ -167,7 +167,7 @@ animations = [{
 size = Vector2(60, 62)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_upi4o"]
-radius = 431.40613
+radius = 305.9187
 
 [node name="Slime" type="CharacterBody2D" unique_id=211502841]
 collision_layer = 2

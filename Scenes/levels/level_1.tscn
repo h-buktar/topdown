@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bqvj7wttx1p5a"]
+
+[ext_resource type="PackedScene" uid="uid://ck0m6kh26db8i" path="res://Scenes/levels/base_level.tscn" id="1_mkwgf"]
+[ext_resource type="PackedScene" uid="uid://oqfikqjswgpm" path="res://Scenes/slime.tscn" id="2_2mbx3"]
+
+[node name="LevelRoot" unique_id=1579203927 instance=ExtResource("1_mkwgf")]
+
+[node name="Slime" parent="Enemies" parent_id_path=PackedInt32Array(1043288856) index="0" unique_id=211502841]
+position = Vector2(3726, 509)
+
+[node name="Slime2" parent="Enemies" parent_id_path=PackedInt32Array(1043288856) index="1" unique_id=741187160 instance=ExtResource("2_2mbx3")]
+position = Vector2(2865, -664)
+
+[node name="Slime3" parent="Enemies" parent_id_path=PackedInt32Array(1043288856) index="2" unique_id=96779287 instance=ExtResource("2_2mbx3")]
+position = Vector2(1548, 318)
+
+[node name="Slime4" parent="Enemies" parent_id_path=PackedInt32Array(1043288856) index="3" unique_id=2106447037 instance=ExtResource("2_2mbx3")]
+position = Vector2(2598, 1494)
