@@ -170,8 +170,8 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ogabi")
 sources/1 = SubResource("TileSetAtlasSource_ax2y4")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_upi4o"]
-size = Vector2(195, 197)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdhy0"]
+size = Vector2(193, 187)
 
 [node name="LevelRoot" type="Node2D" unique_id=1579203927]
 y_sort_enabled = true
@@ -194,14 +194,14 @@ position = Vector2(591, 575)
 [node name="Enemies" type="Node2D" parent="." unique_id=1043288856]
 
 [node name="Slime" parent="Enemies" unique_id=211502841 instance=ExtResource("4_pe5gb")]
-position = Vector2(3292, 326)
+position = Vector2(2622, 119)
 
 [node name="Exit" type="Area2D" parent="." unique_id=1102427444]
-position = Vector2(5347, -263)
+position = Vector2(5429, -288)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1097077238]
-position = Vector2(87.5, -31.5)
-shape = SubResource("RectangleShape2D_upi4o")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1334084835]
+position = Vector2(4.5, 0.5)
+shape = SubResource("RectangleShape2D_sdhy0")
 
 [connection signal="body_entered" from="Exit" to="Player" method="_on_exit_body_entered"]

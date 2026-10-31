@@ -193,6 +193,7 @@ scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_upi4o")
 
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=1939191665]
+position = Vector2(-13, -16)
 stream = ExtResource("3_aiwxb")
 
 [node name="HealthBar" parent="." unique_id=1191603700 instance=ExtResource("4_paq7w")]
