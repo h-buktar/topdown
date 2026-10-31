@@ -169,6 +169,9 @@ size = Vector2(60, 62)
 [sub_resource type="CircleShape2D" id="CircleShape2D_upi4o"]
 radius = 305.9187
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdhy0"]
+size = Vector2(95, 79)
+
 [node name="Slime" type="CharacterBody2D" unique_id=211502841]
 collision_layer = 2
 collision_mask = 0
@@ -200,5 +203,16 @@ stream = ExtResource("3_aiwxb")
 position = Vector2(-25, -56.000004)
 scale = Vector2(3, 3)
 
+[node name="Hitbox" type="Area2D" parent="." unique_id=209609239]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=152993273]
+position = Vector2(-0.5, 1.5)
+shape = SubResource("RectangleShape2D_sdhy0")
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=1602288397]
+
 [connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]
 [connection signal="body_exited" from="Sight" to="." method="_on_sight_body_exited"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
