@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="TopDown"
-run/main_scene="uid://bpfetq2spy761"
+run/main_scene="uid://bei2sf0wwvbeo"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+PlayerStats="*uid://0xr5e5uqcqnv"
 
 [display]
 

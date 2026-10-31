@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bqvj7wttx1p5a"]
+
+[ext_resource type="PackedScene" uid="uid://ck0m6kh26db8i" path="res://Scenes/levels/base_level.tscn" id="1_mkwgf"]
+[ext_resource type="PackedScene" uid="uid://oqfikqjswgpm" path="res://Scenes/slime.tscn" id="2_2mbx3"]
+
+[node name="LevelRoot" unique_id=1579203927 instance=ExtResource("1_mkwgf")]
+
+[node name="Slime" parent="." index="5" unique_id=211502841 instance=ExtResource("2_2mbx3")]
+position = Vector2(1252, 661)
