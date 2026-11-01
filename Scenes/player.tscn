@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c41o0jxk6r47e" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://d0wvyd3ljrajw" path="res://Assets/Cute_Fantasy_Free/Player/Player.png" id="1_v0iea"]
 [ext_resource type="AudioStream" uid="uid://1f2oevk7uqk0" path="res://Assets/Music/530444__mellau__whoosh-short-4.wav" id="3_6t5aa"]
+[ext_resource type="AudioStream" uid="uid://fcrscrdbh388" path="res://Assets/Music/770124__ienba__big-character-grunts.wav" id="4_vgqql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ke3b4"]
 size = Vector2(38.5, 32)
@@ -281,7 +282,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qqcod")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"dying",
 "speed": 5.0
 }, {
@@ -440,8 +441,7 @@ shape = SubResource("RectangleShape2D_ke3b4")
 position = Vector2(-8, 1)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_upi4o")
-animation = &"attack_right"
-frame = 1
+animation = &"dying"
 
 [node name="SwingSword" type="AudioStreamPlayer2D" parent="." unique_id=1044206542]
 stream = ExtResource("3_6t5aa")
@@ -458,6 +458,11 @@ shape = SubResource("RectangleShape2D_upi4o")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=858870628]
 zoom = Vector2(0.5, 0.5)
+
+[node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=1819786696]
+stream = ExtResource("4_vgqql")
+
+[node name="DamageCooldown" type="Timer" parent="." unique_id=596377693]
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
