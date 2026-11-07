@@ -12,15 +12,10 @@ func _ready() -> void:
 		exit.body_entered.connect(_on_exit_body_entered)
 		
 
-
 func _load_level(level_number: int) -> void:
 	if current_level_root:
 		current_level_root.queue_free()
-			   
-		
-		
-		
-		# CHANGE LEVELS
+	
 	var level_path ="res://Scenes/levels/level_%s.tscn" % level_number
 	current_level_root = load(level_path).instantiate()
 	add_child(current_level_root)
