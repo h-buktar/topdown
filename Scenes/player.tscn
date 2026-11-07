@@ -441,7 +441,7 @@ shape = SubResource("RectangleShape2D_ke3b4")
 position = Vector2(-8, 1)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_upi4o")
-animation = &"dying"
+animation = &"attack_down"
 
 [node name="SwingSword" type="AudioStreamPlayer2D" parent="." unique_id=1044206542]
 stream = ExtResource("3_6t5aa")

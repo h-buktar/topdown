@@ -22,7 +22,7 @@ var alive: bool = true
 func _ready() -> void:
 	
 	# Load health from signleton
-	health = 10#PlayerStats.health
+	health = 30 #PlayerStats.health
 	max_health = PlayerStats.max_health
 	
 	# Initialize hitbox offset
@@ -41,6 +41,13 @@ func _physics_process(_delta: float) -> void:
 		velocity = Vector2.ZERO
 		return
 	
+	if health <= 0:
+		alive = false
+		is_attacking = false
+		animated_sprite_2d.play("dying")
+		await animated_sprite_2d.animation_finished
+		get_tree().call_deferred("reload_current_scene")
+	
 	process_movement()
 	process_animation()
 	move_and_slide()
@@ -53,14 +60,15 @@ func _physics_process(_delta: float) -> void:
 func process_movement() -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_vector("left","right","up","down")
-	
-	if direction != Vector2.ZERO:
-		velocity = direction * SPEED
-		last_direction = direction
-		update_hitbox_offset() 
-	else:
-		velocity = Vector2.ZERO
+	if alive:
+		var direction := Input.get_vector("left","right","up","down")
+		
+		if direction != Vector2.ZERO:
+			velocity = direction * SPEED
+			last_direction = direction
+			update_hitbox_offset() 
+		else:
+			velocity = Vector2.ZERO
 
 
 func process_animation() -> void: 
@@ -86,20 +94,18 @@ func play_animation(prefix: String, dir: Vector2) -> void:
 #------------------------------------------------------
 
 func attack() -> void:
-	is_attacking = true
-	hitbox.monitoring = true
-	swing_sword_sound.play()
-	play_animation("attack", last_direction)
-func _on_animated_sprite_2d_animation_finished() -> void:
-	if is_attacking:
-		is_attacking= false
-		
-		# Hitbox 
+	if alive:
+		is_attacking = true
+		hitbox.monitoring = true
+		swing_sword_sound.play()
+		play_animation("attack", last_direction)
+		await animated_sprite_2d.animation_finished
+		is_attacking = false
+
 func update_hitbox_offset() -> void:
 	var x := hitbox_offset.x
 	var y := hitbox_offset.y
-
-
+	
 	match last_direction:
 		Vector2.LEFT:
 			hitbox.position = Vector2(-x,y)
@@ -109,39 +115,18 @@ func update_hitbox_offset() -> void:
 			hitbox.position = Vector2(y,-x)
 		Vector2.DOWN:
 			hitbox.position = Vector2(-y,x)
-	
-	
-	
-		
-		
-		
-
-
-
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if is_attacking and body.name == "Slime":
 		body.take_damage(strength, position)
 	if is_attacking and body.name.begins_with("Slime"):
 		body.take_damage(strength , position)
-		
-		
 
 func take_damage(amount: int) -> void:
+	print(health)
+	
 	if alive:
-		if damage_cooldown.time_left > 0:
-			return
-		take_damage_sound.play()
-		health -= amount
-		PlayerStats.health = health
-		print(health)
-		if health  <= 0:
-			die()
-
-
-#  Make player invincible for a short time
-	damage_cooldown.start()
-
-func  die() -> void:
-	animated_sprite_2d.play("dying")
-	alive = false
+			take_damage_sound.play()
+			health -= amount
+			PlayerStats.health = health
+			damage_cooldown.start()
