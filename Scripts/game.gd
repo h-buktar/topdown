@@ -1,5 +1,6 @@
 extends Node2D
-@onready var hud: CanvasLayer = $HUD
+@onready var hud: CanvasLayer = $"../HUD"
+
 
 var level: int = 1
 var current_level_root: Node = null
@@ -27,7 +28,7 @@ func _load_level(level_number: int) -> void:
 func _setup_level(level_root: Node) -> void:
 	
 	var player = level_root.get_node("Player")
-	player_died.connect(_on_player_died)
+	player.player_died.connect(_on_player_died)
 	
 	
 	
