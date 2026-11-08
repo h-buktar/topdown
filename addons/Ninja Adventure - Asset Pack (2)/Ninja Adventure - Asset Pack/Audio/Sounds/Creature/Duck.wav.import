@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cjlns6semjmn7"
+path="res://.godot/imported/Duck.wav-9e7b91519ad9fc5c9a23dd625c341f20.sample"
+
+[deps]
+
+source_file="res://addons/Ninja Adventure - Asset Pack (2)/Ninja Adventure - Asset Pack/Audio/Sounds/Creature/Duck.wav"
+dest_files=["res://.godot/imported/Duck.wav-9e7b91519ad9fc5c9a23dd625c341f20.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

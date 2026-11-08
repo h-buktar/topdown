@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://mfv6b15wfsw0" path="res://Scripts/hud.gd" id="1_e0onf"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e0onf"]
-load_path = "res://.godot/imported/Heart_full.png-bcd471eca1ab4416c86b163911d9e9c4.ctex"
 
 [node name="HUD" type="CanvasLayer" unique_id=1380994969]
 script = ExtResource("1_e0onf")
@@ -19,6 +18,8 @@ color = Color(0.0035191667, 0.0035191681, 0.0035191672, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Hearts" type="HBoxContainer" parent="." unique_id=629103243]
+anchors_preset = -1
+anchor_bottom = 0.01064815
 offset_left = 1.0
 offset_top = -3.000002
 offset_right = 87.0

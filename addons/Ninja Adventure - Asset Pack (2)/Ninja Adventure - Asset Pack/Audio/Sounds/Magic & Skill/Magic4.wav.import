@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://duix07150lkus"
+path="res://.godot/imported/Magic4.wav-bba30846f738de8774f0aa0e08e7e822.sample"
+
+[deps]
+
+source_file="res://addons/Ninja Adventure - Asset Pack (2)/Ninja Adventure - Asset Pack/Audio/Sounds/Magic & Skill/Magic4.wav"
+dest_files=["res://.godot/imported/Magic4.wav-bba30846f738de8774f0aa0e08e7e822.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
