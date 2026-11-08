@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7rmxxphvsspb"
-path="res://.godot/imported/Preview.png-6cc35adf6a30536b13c81dedd488f4da.ctex"
+uid="uid://d03hq0e2iw0je"
+path="res://.godot/imported/Heart_full.png.png-42726cde883c9b6ba45d770834c10a6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Sphere/Preview.png"
-dest_files=["res://.godot/imported/Preview.png-6cc35adf6a30536b13c81dedd488f4da.ctex"]
+source_file="res://Assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Heart_full.png.png"
+dest_files=["res://.godot/imported/Heart_full.png.png-42726cde883c9b6ba45d770834c10a6e.ctex"]
 
 [params]
 
