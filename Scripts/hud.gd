@@ -1,19 +1,37 @@
 extends CanvasLayer
 const HEART_SIZE: int = 20
-@onready var fade_overlay: ColorRect = $FadeOverlay
-@onready var hearts_container: HBoxContainer = $Hearts
+var player
+const HEART_FULL = preload("res://Assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Heart_full.png.png")
+const HEART_HALF = preload("res://Assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Heart_half.png.png")
+const HEART_EMPTY = preload("res://Assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Heart_empty.png.png")
 
- func _ready() -> void:
-	_update_health(50)
+@onready var hearts_container: HBoxContainer = $Hearts
+@onready var fade_overlay: ColorRect = $FadeOverlay
+
+
+
+func set_player(p) -> void:
+	player = p
+	if player:
+		player.health_changed.connect(_update_health)
+		_update_health(player.health)
 
 func _update_health(new_health:int) -> void:
 	var hearts = hearts_container.get_children()
 	var max_hearts = len(hearts)
 	var full = int(new_health / HEART_SIZE)
 	var half = 1 if(new_health % HEART_SIZE) > 0 else 0
-	var empty = max_heart - (full + half)
+	var empty = max_hearts - (full + half)
 
-	
+	# Update full hearts
+	for i in full:
+		hearts[i].texture = HEART_FULL
+# Update half hearts
+	if half:
+		hearts[full].texture = HEART_HALF
+# Update empty hearts
+	for i in empty:
+		hearts[len(hearts) - 1 - i].texture = HEART_EMPTY
 
 
 

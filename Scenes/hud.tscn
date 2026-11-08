@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bh8qehr67lcoy"]
 
 [ext_resource type="Script" uid="uid://mfv6b15wfsw0" path="res://Scripts/hud.gd" id="1_e0onf"]
-[ext_resource type="Texture2D" uid="uid://d03hq0e2iw0je" path="res://Assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Heart_full.png.png" id="2_fccik"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e0onf"]
+load_path = "res://.godot/imported/Heart_full.png-bcd471eca1ab4416c86b163911d9e9c4.ctex"
 
 [node name="HUD" type="CanvasLayer" unique_id=1380994969]
 script = ExtResource("1_e0onf")
@@ -17,31 +19,34 @@ color = Color(0.0035191667, 0.0035191681, 0.0035191672, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Hearts" type="HBoxContainer" parent="." unique_id=629103243]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1.0
+offset_top = -3.000002
+offset_right = 87.0
+offset_bottom = 8.999998
 scale = Vector2(3, 3)
+metadata/_edit_use_anchors_ = true
 
 [node name="Heart1" type="TextureRect" parent="Hearts" unique_id=622863907]
 layout_mode = 2
-texture = ExtResource("2_fccik")
+texture = SubResource("CompressedTexture2D_e0onf")
 stretch_mode = 2
 
 [node name="Heart2" type="TextureRect" parent="Hearts" unique_id=1832818458]
 layout_mode = 2
-texture = ExtResource("2_fccik")
+texture = SubResource("CompressedTexture2D_e0onf")
 stretch_mode = 2
 
 [node name="Heart3" type="TextureRect" parent="Hearts" unique_id=580603608]
 layout_mode = 2
-texture = ExtResource("2_fccik")
+texture = SubResource("CompressedTexture2D_e0onf")
 stretch_mode = 2
 
 [node name="Heart4" type="TextureRect" parent="Hearts" unique_id=909880932]
 layout_mode = 2
-texture = ExtResource("2_fccik")
+texture = SubResource("CompressedTexture2D_e0onf")
 stretch_mode = 2
 
 [node name="Heart5" type="TextureRect" parent="Hearts" unique_id=376219698]
 layout_mode = 2
-texture = ExtResource("2_fccik")
+texture = SubResource("CompressedTexture2D_e0onf")
 stretch_mode = 2
