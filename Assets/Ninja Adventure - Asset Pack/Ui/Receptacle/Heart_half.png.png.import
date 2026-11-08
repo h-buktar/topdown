@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckaoqfj6xhu2t"
-path="res://.godot/imported/ProgressGreen.png-baed292fac3ff4b45dee634ddff325aa.ctex"
+uid="uid://bxddkmx08fjt"
+path="res://.godot/imported/Heart_half.png.png-33f7705b0d29bf540f5ac5ca0ac67184.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Receptacle Sphere/ProgressGreen.png"
-dest_files=["res://.godot/imported/ProgressGreen.png-baed292fac3ff4b45dee634ddff325aa.ctex"]
+source_file="res://Assets/Ninja Adventure - Asset Pack/Ui/Receptacle/Heart_half.png.png"
+dest_files=["res://.godot/imported/Heart_half.png.png-33f7705b0d29bf540f5ac5ca0ac67184.ctex"]
 
 [params]
 
