@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+signal player_died 
 const SPEED = 300.0
 
 var last_direction: Vector2 = Vector2.RIGHT
@@ -22,7 +22,7 @@ var alive: bool = true
 func _ready() -> void:
 	
 	# Load health from signleton
-	health = 30 #PlayerStats.health
+	health = 100 #PlayerStats.health
 	max_health = PlayerStats.max_health
 	
 	# Initialize hitbox offset
@@ -43,6 +43,7 @@ func _physics_process(_delta: float) -> void:
 	
 	if health <= 0:
 		alive = false
+		player_died.emit()
 		is_attacking = false
 		animated_sprite_2d.play("dying")
 		await animated_sprite_2d.animation_finished
