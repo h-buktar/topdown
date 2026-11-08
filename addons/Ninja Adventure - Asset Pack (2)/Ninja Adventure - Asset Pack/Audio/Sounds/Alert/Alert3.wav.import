@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bynvxtcf56yul"
+path="res://.godot/imported/Alert3.wav-179bb7cf9fb1d403984d07646a4dd17c.sample"
+
+[deps]
+
+source_file="res://addons/Ninja Adventure - Asset Pack (2)/Ninja Adventure - Asset Pack/Audio/Sounds/Alert/Alert3.wav"
+dest_files=["res://.godot/imported/Alert3.wav-179bb7cf9fb1d403984d07646a4dd17c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
