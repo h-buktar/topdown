@@ -1,5 +1,6 @@
 extends CharacterBody2D
 signal player_died 
+signal health_changed(new_health: int)
 const SPEED = 300.0
 
 var last_direction: Vector2 = Vector2.RIGHT
@@ -124,10 +125,9 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		body.take_damage(strength , position)
 
 func take_damage(amount: int) -> void:
-	print(health)
-	
 	if alive:
 			take_damage_sound.play()
 			health -= amount
 			PlayerStats.health = health
+			emit_signal("health_changed", health)
 			damage_cooldown.start()

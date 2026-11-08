@@ -28,6 +28,7 @@ func _load_level(level_number: int) -> void:
 func _setup_level(level_root: Node) -> void:
 	
 	var player = level_root.get_node("Player")
+	$"../HUD".call_deferred("set_player" , player)
 	player.player_died.connect(_on_player_died)
 	
 	
