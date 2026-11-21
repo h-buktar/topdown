@@ -1,5 +1,5 @@
 extends Node2D
-@onready var hud: CanvasLayer = $"../HUD"
+@onready var hud: CanvasLayer = $HUD
 @onready var current_level_root = $LevelRoot
 
 const LEVELS = [
@@ -16,7 +16,9 @@ var changing_level: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("GAME READY")
+	print("ABOUT TO LOAD LEVEL")
 	_load_level()
+	print("LOAD LEVEL FUNCTION FINISHED")
 
 
 func _load_level():
@@ -32,25 +34,31 @@ func _load_level():
 	
 	loaded_level = LEVELS[level].instantiate()
 	current_level_root.add_child(loaded_level)
+	_setup_level(loaded_level)
 	changing_level = false
 	print("Loaded level: " , level + 1)
 	
-	
-	
-	
 func change_level():
+		print("CHANGE LEVEL CALLED")
+	
 		if changing_level:
+			print("LEVEL CHANGE ALREADY IN PROGRESS")
 			return
 			
-			changing_level = true
-			level += 1
-			
-			_load_level()
+		changing_level = true
+		print("CHANGING LEVEL FLAG SET TO TRUE")
+		level += 1
+		
+		print("NEW LEVEL INDEX:", level)
+		_load_level()
 			
 			
 func _on_exit_body_entered(body:Node2D):
+	print("EXIT TOUCHED")
+	
 	if body.is_in_group("player"):
-		change_level()
+			print("PLAYER DETECTED")
+			change_level()
 
 
 
@@ -59,7 +67,7 @@ func _on_exit_body_entered(body:Node2D):
 func _setup_level(level_root: Node) -> void:
 	print("SETUP LEVEL CALLED")
 	var player = level_root.get_node("Player")
-	$"../HUD".call_deferred("set_player" , player)
+	$HUD.call_deferred("set_player" , player)
 	player.player_died.connect(_on_player_died)
 	
 	
