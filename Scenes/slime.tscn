@@ -200,7 +200,7 @@ position = Vector2(-13, -16)
 stream = ExtResource("3_aiwxb")
 
 [node name="HealthBar" parent="." unique_id=1191603700 instance=ExtResource("4_paq7w")]
-position = Vector2(-25, -56.000004)
+position = Vector2(-889, 718)
 scale = Vector2(3, 3)
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=209609239]
