@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://b5qcpytj16k5e"]
+
+[ext_resource type="Texture2D" uid="uid://bx67du1qq8e78" path="res://Assets/pic 1.PNG" id="1_28flt"]
+[ext_resource type="Script" uid="uid://biv75sivf22tc" path="res://Scripts/main_menu.gd" id="1_48xlc"]
+
+[node name="MainMenu" type="Control" unique_id=1669944913]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_48xlc")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2116738992]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_28flt")
+stretch_mode = 6
+
+[node name="PlayButton" type="Button" parent="." unique_id=711510768]
+layout_mode = 0
+offset_left = 495.0
+offset_top = 495.0
+offset_right = 834.0
+offset_bottom = 609.0
+text = "PLAY
+"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
