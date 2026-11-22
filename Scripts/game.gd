@@ -6,7 +6,8 @@ const LEVELS = [
 	preload("res://Scenes/levels/base_level.tscn"),
 	preload("res://Scenes/levels/level_1.tscn"),
 	preload("res://Scenes/levels/level_2.tscn"),
-	preload("res://Scenes/levels/level_3.tscn")
+	preload("res://Scenes/levels/level_3.tscn"),
+	preload("res://Scenes/levels/level_4.tscn")
 ]
 
 var level: int = 0

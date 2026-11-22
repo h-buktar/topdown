@@ -258,4 +258,40 @@ metadata/_edit_group_ = true
 position = Vector2(4.5, 0.5)
 shape = SubResource("RectangleShape2D_sdhy0")
 
+[node name="Slime" parent="." unique_id=1164227670 instance=ExtResource("4_pe5gb")]
+position = Vector2(1126, 909)
+
+[node name="Slime2" parent="." unique_id=1100209431 instance=ExtResource("4_pe5gb")]
+position = Vector2(2778, 1578)
+
+[node name="Slime3" parent="." unique_id=387387836 instance=ExtResource("4_pe5gb")]
+position = Vector2(5047, 679)
+
+[node name="Slime4" parent="." unique_id=1933839200 instance=ExtResource("4_pe5gb")]
+position = Vector2(4430, 136)
+
+[node name="Slime5" parent="." unique_id=1531753941 instance=ExtResource("4_pe5gb")]
+position = Vector2(2137, 1015)
+
+[node name="Slime6" parent="." unique_id=1625897237 instance=ExtResource("4_pe5gb")]
+position = Vector2(1847, -743)
+
+[node name="Slime7" parent="." unique_id=1114357081 instance=ExtResource("4_pe5gb")]
+position = Vector2(759, 1866)
+
+[node name="Slime8" parent="." unique_id=2019384423 instance=ExtResource("4_pe5gb")]
+position = Vector2(3654, 84)
+
+[node name="Slime9" parent="." unique_id=1552346754 instance=ExtResource("4_pe5gb")]
+position = Vector2(4941, 1696)
+
+[node name="Slime10" parent="." unique_id=1151120565 instance=ExtResource("4_pe5gb")]
+position = Vector2(3630, 503)
+
+[node name="Slime11" parent="." unique_id=1620144578 instance=ExtResource("4_pe5gb")]
+position = Vector2(1600, 205)
+
+[node name="Slime12" parent="." unique_id=1403478917 instance=ExtResource("4_pe5gb")]
+position = Vector2(707, -48)
+
 [connection signal="body_entered" from="Exit" to="Player" method="_on_exit_body_entered"]

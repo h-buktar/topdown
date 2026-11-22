@@ -1,5 +1,5 @@
 extends CharacterBody2D
-const SPEED: int = 150
+const SPEED: int = 250
 const KNOCKBACK_FORCE: int = 100
 
 var is_alive: bool = true
